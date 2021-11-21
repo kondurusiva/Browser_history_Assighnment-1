@@ -13,7 +13,7 @@ const BrowserHistoryPage = props => {
         <p>{timeAccessed}</p>
       </div>
       <div>
-        <img src={logoUrl} alt="logoUrl" />
+        <img src={logoUrl} alt="domain logo" />
       </div>
       <div>
         <p>{title}</p>
@@ -22,7 +22,7 @@ const BrowserHistoryPage = props => {
         <p>{domainUrl}</p>
       </div>
       <div>
-        <button type="button" onClick={onDelete}>
+        <button testid="delete" type="button" onClick={onDelete}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
             alt="delete"
