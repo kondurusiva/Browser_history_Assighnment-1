@@ -87,22 +87,40 @@ class App extends Component {
   }
 
   onChangeSearchInput = event => {
-    this.setState({searchInput: event.target.value})
+    const {searchInput} = this.state
+    if (searchInput.length === 0) {
+      const changeBoolean = false
+      this.setState({
+        searchInput: event.target.value,
+        yesHistory: changeBoolean,
+      })
+    } else {
+      this.setState({searchInput: event.target.value, yesHistory: true})
+    }
   }
 
   onDeleteHistory = id => {
-    const {historyDetailsList} = this.state
+    const {historyDetailsList, yesHistory} = this.state
     const filteredHistory = historyDetailsList.filter(
       eachHistory => eachHistory.id !== id,
     )
-    this.setState({historyDetailsList: filteredHistory})
+    if (filteredHistory.length === 0) {
+      const changeBoolean = !yesHistory
+      this.setState({
+        historyDetailsList: filteredHistory,
+        yesHistory: changeBoolean,
+      })
+    } else {
+      this.setState({historyDetailsList: filteredHistory})
+    }
   }
 
   render() {
-    const {searchInput, historyDetailsList} = this.state
+    const {searchInput, historyDetailsList, yesHistory} = this.state
     const searchResults = historyDetailsList.filter(eachHistory =>
       eachHistory.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
+    const list=
 
     return (
       <div>
@@ -128,13 +146,17 @@ class App extends Component {
           />
         </div>
         <ul>
-          {searchResults.map(eachHistory => (
-            <BrowserHistoryPage
-              historyDetails={eachHistory}
-              key={eachHistory.id}
-              onDeleteHistory={this.onDeleteHistory}
-            />
-          ))}
+          {yesHistory ? (
+            searchResults.map(eachHistory => (
+              <BrowserHistoryPage
+                historyDetails={eachHistory}
+                key={eachHistory.id}
+                onDeleteHistory={this.onDeleteHistory}
+              />
+            ))
+          ) : (
+            <p>There is no history to show</p>
+          )}
         </ul>
       </div>
     )
