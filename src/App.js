@@ -88,6 +88,7 @@ class App extends Component {
 
   onChangeSearchInput = event => {
     const {searchInput} = this.state
+
     if (searchInput.length === 0) {
       const changeBoolean = false
       this.setState({
@@ -120,7 +121,6 @@ class App extends Component {
     const searchResults = historyDetailsList.filter(eachHistory =>
       eachHistory.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
-    const list=
 
     return (
       <div>
