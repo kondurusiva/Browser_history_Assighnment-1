@@ -1,0 +1,27 @@
+.app-container {
+  background-color: #3367d6;
+  padding: 15px;
+  height: 80px;
+}
+
+.input-icon {
+  background-color: #2850a7;
+  border-width: 0px;
+  padding-top: 20px;
+  margin-left: 3px;
+  text-align: center;
+  width: 500px;
+}
+.search-icon {
+  background-color: #2850a7;
+  margin-left: 400px;
+  padding: 3px;
+  align-items: center;
+}
+
+.list-container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
