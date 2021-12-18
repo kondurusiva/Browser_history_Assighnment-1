@@ -2,6 +2,8 @@
   background-color: #3367d6;
   padding: 15px;
   height: 80px;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-icon {
@@ -9,8 +11,8 @@
   border-width: 0px;
   padding-top: 20px;
   margin-left: 3px;
-  text-align: center;
   width: 500px;
+  align-items: center;
 }
 .search-icon {
   background-color: #2850a7;
@@ -22,6 +24,28 @@
 .list-container {
   list-style-type: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 30px;
+  font-family: 'Roboto';
+}
+
+.logo-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.logo-container {
+  display: flex;
+  margin-left: 100px;
+  align-items: center;
+}
+
+.btn-container {
+  border: none;
+  background-color: transparent;
+}
+
+.wrap-container {
+  display: flex;
 }
