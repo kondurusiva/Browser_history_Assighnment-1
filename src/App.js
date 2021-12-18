@@ -117,7 +117,7 @@ class App extends Component {
   }
 
   render() {
-    const {searchInput, historyDetailsList, yesHistory} = this.state
+    const {searchInput, historyDetailsList} = this.state
     const searchResults = historyDetailsList.filter(eachHistory =>
       eachHistory.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
@@ -145,19 +145,21 @@ class App extends Component {
             value={searchInput}
           />
         </div>
-        <ul>
-          {yesHistory ? (
-            searchResults.map(eachHistory => (
-              <BrowserHistoryPage
-                historyDetails={eachHistory}
-                key={eachHistory.id}
-                onDeleteHistory={this.onDeleteHistory}
-              />
-            ))
-          ) : (
-            <p>There is no history to show</p>
-          )}
-        </ul>
+        <div className="card-container">
+          <ul className="shadow-container">
+            {searchResults.length !== 0 ? (
+              searchResults.map(eachHistory => (
+                <BrowserHistoryPage
+                  historyDetails={eachHistory}
+                  key={eachHistory.id}
+                  onDeleteHistory={this.onDeleteHistory}
+                />
+              ))
+            ) : (
+              <p>There is no history to show</p>
+            )}
+          </ul>
+        </div>
       </div>
     )
   }
