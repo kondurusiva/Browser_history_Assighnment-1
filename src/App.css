@@ -21,8 +21,7 @@ body {
   background-color: #2850a7;
   border-width: 0px;
   padding-top: 20px;
-  margin-left: 3px;
-  text-align: center;
+  margin-left: 5px;
   width: 500px;
 }
 .search-icon {
@@ -30,4 +29,20 @@ body {
   margin-left: 400px;
   padding: 3px;
   align-items: center;
+}
+
+.shadow-container {
+  background-color: #f8fafc;
+  box-shadow: 3px 3px 5px 5px #475569;
+  margin: 50px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  padding: 30px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
 }
