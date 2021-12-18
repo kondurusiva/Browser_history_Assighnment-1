@@ -9,20 +9,25 @@ const BrowserHistoryPage = props => {
 
   return (
     <li className="list-container">
-      <div>
-        <p>{timeAccessed}</p>
+      <div className="wrap-container">
+        <div>
+          <p>{timeAccessed}</p>
+        </div>
+        <div className="logo-container">
+          <img className="logo-image" src={logoUrl} alt="domain logo" />
+          <p>{title}</p>
+        </div>
+        <div>
+          <p>{domainUrl}</p>
+        </div>
       </div>
       <div>
-        <img src={logoUrl} alt="domain logo" />
-      </div>
-      <div>
-        <p>{title}</p>
-      </div>
-      <div>
-        <p>{domainUrl}</p>
-      </div>
-      <div>
-        <button testid="delete" type="button" onClick={onDelete}>
+        <button
+          className="btn-container"
+          testid="delete"
+          type="button"
+          onClick={onDelete}
+        >
           <img
             src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
             alt="delete"
